@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taller Digital — Sitios web, bots y automatización</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="cyber-theme">
+
+<!-- 3D Neural Cyber-Brain Canvas Background -->
+<div id="neural-bg-wrapper">
+  <canvas id="neural-canvas"></canvas>
+  <div class="scanline-overlay"></div>
+  <div class="neural-overlay"></div>
+</div>
+
+<header>
+  <nav class="nav">
+   <div class="logo"><span class="mark"></span>TALLER&nbsp;DIGITAL</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicios" data-i18n="nav.servicios">Servicios</a></li>
+      <li><a href="#portafolio" data-i18n="nav.portafolio">Portafolio</a></li>
+      <li><a href="#proceso" data-i18n="nav.proceso">Cómo trabajamos</a></li>
+      <li><a href="#brief" class="nav-cta cyber-clip" data-i18n="nav.cta">Pedir presupuesto</a></li>
+    </ul>
+    <div class="controls">
+      <div class="lang-toggle" role="group" aria-label="Idioma / Language">
+        <button class="lang-btn active" id="langEs" data-lang="es">ES</button>
+        <button class="lang-btn" id="langEn" data-lang="en">EN</button>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema" data-i18n-aria="theme.toggle">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </button>
+    </div>
+    <button class="burger" id="burgerBtn" aria-label="Abrir menú" data-i18n-aria="nav.burger">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero blueprint-bg crop">
+    <div class="wrap hero-inner">
+      <div>
+        <div class="hud-tag">[NEURAL_CORE_ACTIVE]</div>
+        <h1 data-i18n-html="hero.title">Sitios web, bots y <em>automatización</em> para negocios.</h1>
+        <p data-i18n="hero.desc">Ayudo a pequeños negocios a tener presencia online, atender clientes por WhatsApp automáticamente y dejar de repetir tareas a mano — todo explicado sin tecnicismos.</p>
+        <div class="cta-row">
+          <a href="#brief" class="btn btn-primary cyber-clip" data-i18n="hero.cta1">Pedir presupuesto →</a>
+          <a href="#portafolio" class="btn btn-ghost cyber-clip" data-i18n="hero.cta2">Ver portafolio</a>
+        </div>
+      </div>
+      <div class="stamp-zone">
+        <div class="wa-mockup cyber-card">
+          <div class="hud-corner top-left"></div>
+          <div class="hud-corner bottom-right"></div>
+          <div class="wa-header">
+            <div class="wa-avatar">TD</div>
+            <div class="wa-contact-info">
+              <span class="wa-name">Taller Digital Bot</span>
+              <span class="status-dot"></span> en línea
+            </div>
+          </div>
+          <div class="wa-body" id="waBody">
+            <div class="wa-msg incoming">
+              <span data-i18n="wa.msg1">Hola 👋 ¿Cómo podemos automatizar tu negocio hoy?</span>
+              <span class="wa-time">10:00 ✓✓</span>
+            </div>
+            <div class="wa-msg outgoing">
+              <span data-i18n="wa.msg2">Necesito un bot para agendar citas por WhatsApp.</span>
+              <span class="wa-time">10:01 ✓✓</span>
+            </div>
+            <div class="wa-msg incoming">
+              <span data-i18n="wa.msg3">¡Claro! Lo conectamos directo a Google Calendar y listo 🤖</span>
+              <span class="wa-time">10:01 ✓✓</span>
+            </div>
+            <div class="wa-msg outgoing">
+              <span data-i18n="wa.msg4">¡Perfecto! ¿Cómo empezamos?</span>
+              <span class="wa-time">10:02 ✓✓</span>
+            </div>
+          </div>
+          <div class="wa-footer">
+            <div class="wa-input-fake" data-i18n="wa.input">Escribe un mensaje...</div>
+            <div class="wa-mic">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="servicios-dark" id="servicios">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="servicios.eyebrow">Qué puedo hacer por tu negocio</p>
+          <h2 data-i18n="servicios.h2">Cuatro maneras de ahorrarte tiempo</h2>
+        </div>
+        <p class="note" data-i18n="servicios.note">Sin ataduras a una sola industria: cada proyecto se adapta al negocio, no al revés.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-item cyber-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="1.5"/><path d="M3 8.5h18"/><circle cx="6" cy="6.2" r=".5" fill="currentColor" stroke="none"/><circle cx="8.2" cy="6.2" r=".5" fill="currentColor" stroke="none"/></svg></span>
+          <h3 data-i18n="servicios.1.h3">Sitios web a medida</h3>
+          <p data-i18n="servicios.1.p">Páginas de presentación, catálogos y sitios con reservas — listos para enviar por WhatsApp.</p>
+        </div>
+        <div class="service-item cyber-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 20l.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span>
+          <h3 data-i18n="servicios.2.h3">Bots de WhatsApp y Telegram</h3>
+          <p data-i18n="servicios.2.p">Responden preguntas frecuentes, toman pedidos y agendan citas sin que nadie esté pendiente.</p>
+        </div>
+        <div class="service-item cyber-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1.5"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span>
+          <h3 data-i18n="servicios.3.h3">Integración con Google Sheets</h3>
+          <p data-i18n="servicios.3.p">Formularios y pedidos que se guardan solos en una hoja de cálculo, sin copiar y pegar.</p>
+        </div>
+        <div class="service-item cyber-card reveal">
+          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 .33 1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></span>
+          <h3 data-i18n="servicios.4.h3">Automatización de procesos</h3>
+          <p data-i18n="servicios.4.p">Tareas repetitivas — avisos, reportes, seguimientos — resueltas una vez y para siempre.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portafolio">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="portafolio.eyebrow">Trabajos realizados</p>
+          <h2 data-i18n="portafolio.h2">Portafolio</h2>
+        </div>
+        <p class="note" data-i18n="portafolio.note">Proyectos propios y de práctica — el objetivo es que veas cómo trabajo, no solo lo que digo.</p>
+      </div>
+      <div class="portfolio-grid">
+
+        <article class="pf-card cyber-card reveal">
+          <div class="pf-media">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fsegamania90-crypto.github.io%2FAmbar-bar?w=1200&amp;h=750" alt="Ámbar — bar de cócteles" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="pf-body">
+            <span class="pf-tag" data-i18n="portafolio.tag.web">Sitio web</span>
+            <h3 data-i18n="portafolio.1.h3">Ámbar — bar de cócteles</h3>
+            <p data-i18n="portafolio.1.p">Landing de un bar de cócteles en Madrid: carta, galería, reseñas y reservas por formulario o WhatsApp.</p>
+            <div class="pf-foot">
+              <span class="pf-stack">HTML · CSS · JS</span>
+              <a href="https://segamania90-crypto.github.io/Ambar-bar" target="_blank" rel="noopener" class="pf-link" data-i18n="portafolio.link">Ver demo →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pf-card cyber-card reveal">
+          <div class="pf-media">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fpalomita-one.vercel.app%2F?w=1200&amp;h=750" alt="Palomita — catálogo de películas y series" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="pf-body">
+            <span class="pf-tag" data-i18n="portafolio.tag.app">Web app</span>
+            <h3 data-i18n="portafolio.2.h3">Palomita — películas y series</h3>
+            <p data-i18n="portafolio.2.p">Catálogo en tiempo real con datos de TMDB, cuentas de usuario, favoritos en la nube e interfaz en ES/EN/RU.</p>
+            <div class="pf-foot">
+              <span class="pf-stack">JS · Firebase · TMDB API</span>
+              <a href="https://palomita-one.vercel.app/" target="_blank" rel="noopener" class="pf-link" data-i18n="portafolio.link">Ver demo →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pf-card cyber-card reveal">
+          <div class="pf-media">
+            <img src="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fjugando-hazel.vercel.app%2F?w=1200&amp;h=750" alt="Jugando — catálogo de videojuegos" loading="lazy" onerror="this.style.display='none'">
+          </div>
+          <div class="pf-body">
+            <span class="pf-tag" data-i18n="portafolio.tag.app">Web app</span>
+            <h3 data-i18n="portafolio.3.h3">Jugando — catálogo de videojuegos</h3>
+            <p data-i18n="portafolio.3.p">Explorador de miles de juegos vía API de RAWG, con registro de usuario, favoritos en la nube y 3 idiomas.</p>
+            <div class="pf-foot">
+              <span class="pf-stack">React · Firebase · RAWG API</span>
+              <a href="https://jugando-hazel.vercel.app/" target="_blank" rel="noopener" class="pf-link" data-i18n="portafolio.link">Ver demo →</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="pf-card cyber-card reveal">
+          <div class="pf-media pf-media--bot">
+            <div class="pf-chat">
+              <div class="pf-chat-msg in">🔗 instagram.com/reel/8k2df</div>
+              <div class="pf-chat-msg out" data-i18n="portafolio.bot.chat1">🎬 ¡Aquí tienes tu vídeo! ✅</div>
+              <div class="pf-chat-msg in">🔗 youtube.com/watch?v=9fQs</div>
+            </div>
+          </div>
+          <div class="pf-body">
+            <span class="pf-tag" data-i18n="portafolio.tag.bot">Automatización</span>
+            <h3 data-i18n="portafolio.4.h3">Bot de descarga — Instagram y YouTube</h3>
+            <p data-i18n="portafolio.4.p">Bot de Telegram que descarga vídeos a partir de un enlace y los envía directo al chat. Uso privado — esquema ilustrativo, no una grabación real.</p>
+            <div class="pf-foot">
+              <span class="pf-stack">Python · Telegram Bot API</span>
+              <a href="#brief" class="pf-link" data-i18n="portafolio.bot.link">Pregúntame por él →</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <section class="proceso" id="proceso">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow" data-i18n="proceso.eyebrow">De la idea al proyecto entregado</p>
+          <h2 data-i18n="nav.proceso">Cómo trabajamos</h2>
+        </div>
+      </div>
+      <div class="proceso-list proceso-list--5">
+        <div class="proceso-item reveal">
+          <div class="proceso-num cyber-clip">01</div>
+          <h3 data-i18n="proceso.1.h3">Cuéntame qué necesitas</h3>
+          <p data-i18n="proceso.1.p">Rellenas un breve formulario o me escribes por WhatsApp.</p>
+        </div>
+        <div class="proceso-item reveal">
+          <div class="proceso-num cyber-clip">02</div>
+          <h3 data-i18n="proceso.2.h3">Aclaramos los detalles</h3>
+          <p data-i18n="proceso.2.p">Te contacto por llamada o WhatsApp para entender bien el proyecto y resolver dudas.</p>
+        </div>
+        <div class="proceso-item reveal">
+          <div class="proceso-num cyber-clip">03</div>
+          <h3 data-i18n="proceso.3.h3">Recibes tu propuesta</h3>
+          <p data-i18n="proceso.3.p">Te envío el alcance del trabajo y el precio, claros y por escrito. Confirmas que estás de acuerdo.</p>
+        </div>
+        <div class="proceso-item reveal">
+          <div class="proceso-num cyber-clip">04</div>
+          <h3 data-i18n="proceso.4.h3">Confirmas con un anticipo</h3>
+          <p data-i18n="proceso.4.p">30–50% para empezar, por Bizum o transferencia.</p>
+        </div>
+        <div class="proceso-item reveal">
+          <div class="proceso-num cyber-clip">05</div>
+          <h3 data-i18n="proceso.5.h3">Entrega y revisión</h3>
+          <p data-i18n="proceso.5.p">Te entrego el proyecto funcionando y ajustamos lo necesario.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="brief" id="brief">
+    <div class="wrap brief-inner">
+      <div class="brief-intro reveal">
+        <p class="eyebrow" data-i18n="brief.eyebrow">Empecemos</p>
+        <h2 data-i18n="brief.h2">Cuéntame qué necesita tu negocio</h2>
+        <p data-i18n="brief.p">Rellena estos datos y te contacto por WhatsApp con una propuesta o para resolver dudas.</p>
+        <div class="brief-whatsapp cyber-card">
+          <span class="dot"></span>
+          <span data-i18n="brief.whatsapp">Respuesta habitual en menos de 24h por WhatsApp</span>
+        </div>
+      </div>
+
+      <form class="brief-form cyber-card reveal" id="briefForm">
+        <div class="field field-inline">
+          <label for="servicio" data-i18n="form.servicio">Servicio</label>
+          <select id="servicio" name="servicio" required>
+            <option value="" data-i18n="form.select.placeholder">Selecciona una opción</option>
+            <option value="sitio-web" data-i18n="form.select.web">Sitio web</option>
+            <option value="bot" data-i18n="form.select.bot">Bot de WhatsApp / Telegram</option>
+            <option value="sheets" data-i18n="form.select.sheets">Integración con Google Sheets</option>
+            <option value="automatizacion" data-i18n="form.select.auto">Automatización de procesos</option>
+            <option value="otro" data-i18n="form.select.otro">Otro / no estoy seguro</option>
+          </select>
+        </div>
+        <div class="field field-inline">
+          <label for="tarea" data-i18n="form.tarea">Tarea o problema a resolver</label>
+          <textarea id="tarea" name="tarea" placeholder="Ej: necesito que los clientes puedan reservar mesa sin llamar por teléfono" data-i18n-placeholder="form.tarea.placeholder" required></textarea>
+        </div>
+        <div class="field field-inline">
+          <label data-i18n="form.referencias">Referencias</label>
+          <div class="field-inline-control">
+            <div class="toggle-group" id="referenciasToggle" role="group">
+              <button type="button" class="toggle-btn cyber-clip" data-value="si" data-i18n="form.yes">Sí</button>
+              <button type="button" class="toggle-btn cyber-clip" data-value="no" data-i18n="form.no">No</button>
+            </div>
+            <input type="hidden" id="referencias" name="referencias" value="">
+            <div class="toggle-reveal referencias-extra" id="referenciasExtra">
+              <input type="text" id="referenciasDetalle" name="referenciasDetalle" placeholder="Enlace, @usuario de Instagram o Telegram" data-i18n-placeholder="form.referencias.cual">
+              <div class="file-upload-wrap">
+                <input type="file" id="referenciaImagen" name="referenciaImagen" accept="image/*" class="file-input-hidden">
+                <label for="referenciaImagen" class="file-upload-btn cyber-clip" data-i18n="form.referencias.subir">Adjuntar captura</label>
+                <span class="file-upload-name" id="referenciaImagenNombre" data-i18n="form.referencias.sinarchivo">Ningún archivo seleccionado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="field field-inline">
+          <label for="plazos" data-i18n="form.plazos">Plazos</label>
+          <select id="plazos" name="plazos">
+            <option value="" data-i18n="form.select.placeholder.short">Elegir…</option>
+            <option value="urgente" data-i18n="form.plazos.urgente">Urgente</option>
+            <option value="semana" data-i18n="form.plazos.semana">En una semana</option>
+            <option value="mes" data-i18n="form.plazos.mes">En un mes</option>
+            <option value="sin-prisa" data-i18n="form.plazos.sinprisa">Sin prisa</option>
+          </select>
+        </div>
+        <div class="field field-inline">
+          <label data-i18n="form.materiales">Materiales listos</label>
+          <div class="field-inline-control">
+            <div class="toggle-group" id="materialesToggle" role="group">
+              <button type="button" class="toggle-btn cyber-clip" data-value="si" data-i18n="form.yes">Sí</button>
+              <button type="button" class="toggle-btn cyber-clip" data-value="no" data-i18n="form.no">No</button>
+            </div>
+            <input type="hidden" id="materiales" name="materiales" value="">
+          </div>
+        </div>
+        <div class="field field-inline">
+          <label for="presupuesto" data-i18n="form.presupuesto">Presupuesto orientativo</label>
+          <input type="text" id="presupuesto" name="presupuesto" placeholder="€ (abierto)" data-i18n-placeholder="form.presupuesto.placeholder">
+        </div>
+        <div class="field field-inline">
+          <label for="contacto" data-i18n="form.contacto">WhatsApp o email de contacto</label>
+          <input type="text" id="contacto" name="contacto" placeholder="Para enviarte la propuesta" data-i18n-placeholder="form.contacto.placeholder">
+        </div>
+        <button type="submit" class="submit-btn cyber-clip" data-i18n="form.submit">Enviar y recibir propuesta</button>
+        <p class="form-note" data-i18n="form.note">[SECURE_CHANNEL] 🔒 Formulario conectado de forma segura a nuestro sistema interno.</p>
+        <p class="form-privacy" data-i18n="form.privacy">Al enviar tus datos, aceptas que nos pongamos en contacto contigo.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner" style="align-items: flex-start;">
+      <div class="footer-left-group">
+        <div class="footer-logo">TALLER DIGITAL <span class="sys-status">● ONLINE</span></div>
+        <div class="footer-zone" data-i18n="footer.zone">Zona de servicio: Guadalajara, Madrid y remoto (España)</div>
+        <div class="footer-privacy-mini" data-i18n="footer.privacy">Tus datos están protegidos y nunca se comparten con terceros.</div>
+      </div>
+    </div>
+    
+    <div class="wrap footer-bottom" style="padding:0; margin-top: 20px;">
+      <span data-i18n="footer.copy">© 2026 Taller Digital — Todos los proyectos, hechos a medida.</span>
+      <span>WhatsApp: +34 600 000 000</span>
+    </div>
+  </div>
+</footer>
+
+<a href="#brief" class="whatsapp-float cyber-clip" aria-label="Escribir por WhatsApp" data-i18n-aria="whatsapp.aria">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2m0 18.16c-1.48 0-2.93-.4-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.27-4.39c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24m4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.17.24-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.24-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.24-.42.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14-.01-.31-.01-.47-.01-.17 0-.43.06-.66.31-.23.24-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.25 3.74.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.11-.23-.17-.48-.29"/></svg>
+</a>
+
+<script src="script.js"></script>
+
+</body>
+</html>
