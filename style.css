@@ -38,6 +38,9 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
+
+html,body{overflow-x:hidden;max-width:100%;}
+
 body{
   font-family:var(--body);
   font-size: 17px;
