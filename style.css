@@ -840,3 +840,5 @@ footer{
   background: #0a0e17 !important;
   box-shadow: none !important;
 }
+
+@media (max-width:640px){ .footer-bottom span:last-child{ margin-right:0; } }
