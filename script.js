@@ -44,6 +44,19 @@ const navLinks = document.getElementById('navLinks');
 burger.addEventListener('click', () => navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
 
+// Scroll suave SOLO para clics en enlaces internos (#servicios, #brief, etc).
+// El scroll normal con rueda/trackpad se queda nativo (ver nota en style.css).
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', (e) => {
+    const id = a.getAttribute('href').slice(1);
+    const target = id ? document.getElementById(id) : null;
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
 // Chat animations
 function replayWaChat(){
   document.querySelectorAll('#waBody .wa-msg, .pf-chat-msg').forEach(msg => {

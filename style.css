@@ -37,7 +37,11 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+/* scroll-behavior:smooth se quitó de aquí: aplicado a todo <html>, el scroll
+   normal con rueda/trackpad podía quedar "colgado" a mitad de la animación
+   y no llegar nunca al final de la página (footer inalcanzable en algunos
+   casos). El scroll suave para los enlaces del menú ahora lo hace script.js
+   solo para esos clics, con la rueda/trackpad se queda con el scroll nativo. */
 
 html,body{overflow-x:hidden;max-width:100%;}
 
