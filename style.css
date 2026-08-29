@@ -863,41 +863,70 @@ footer{
   .field-inline-control .toggle-group{width:100%;}
 }
 
-/* Анимация чата бота (повтор каждые 10 секунд) */
-
-/* 1. Первая ссылка (Instagram) */
+/* Анимация чата с эффектом печати */
 .pf-chat-msg.in:nth-child(1) {
   opacity: 0;
   animation: botUserMsg1 10s ease-in-out infinite;
 }
 
-/* 2. Ответ бота (розовая плашка) */
+/* Индикатор печатания */
+.pf-chat-msg.typing {
+  opacity: 0;
+  display: inline-flex;
+  gap: 3px;
+  padding: 6px 10px;
+  background: #161b22;
+  border-radius: 6px;
+  width: fit-content;
+  animation: botTyping 10s ease-in-out infinite;
+}
+
+.pf-chat-msg.typing span {
+  animation: blink 1.4s infinite;
+  color: #00f0ff;
+  font-weight: bold;
+}
+.pf-chat-msg.typing span:nth-child(2) { animation-delay: .2s; }
+.pf-chat-msg.typing span:nth-child(3) { animation-delay: .4s; }
+
+/* Ответ бота */
 .pf-chat-msg.out {
   opacity: 0;
   animation: botAnswer 10s ease-in-out infinite;
 }
 
-/* 3. Вторая ссылка (YouTube) */
-.pf-chat-msg.in:nth-child(3) {
+/* Вторая ссылка */
+.pf-chat-msg.in:nth-child(4) {
   opacity: 0;
   animation: botUserMsg2 10s ease-in-out infinite;
 }
 
-/* Ключевые кадры появления */
+/* Тайминги появление/исчезновение */
 @keyframes botUserMsg1 {
-  0% { opacity: 0; transform: translateY(8px); }
-  4%, 70% { opacity: 1; transform: translateY(0); }
-  75%, 100% { opacity: 0; transform: translateY(-5px); }
+  0% { opacity: 0; transform: translateY(6px); }
+  3%, 70% { opacity: 1; transform: translateY(0); }
+  75%, 100% { opacity: 0; }
+}
+
+@keyframes botTyping {
+  0%, 6% { opacity: 0; transform: scale(0.9); }
+  9%, 18% { opacity: 1; transform: scale(1); }
+  21%, 100% { opacity: 0; transform: scale(0.9); }
 }
 
 @keyframes botAnswer {
-  0%, 10% { opacity: 0; transform: scale(0.9); }
-  15%, 70% { opacity: 1; transform: scale(1); }
-  75%, 100% { opacity: 0; transform: scale(0.9); }
+  0%, 19% { opacity: 0; transform: scale(0.9); }
+  23%, 70% { opacity: 1; transform: scale(1); }
+  75%, 100% { opacity: 0; }
 }
 
 @keyframes botUserMsg2 {
-  0%, 25% { opacity: 0; transform: translateY(8px); }
-  30%, 70% { opacity: 1; transform: translateY(0); }
-  75%, 100% { opacity: 0; transform: translateY(-5px); }
+  0%, 30% { opacity: 0; transform: translateY(6px); }
+  34%, 70% { opacity: 1; transform: translateY(0); }
+  75%, 100% { opacity: 0; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: .2; }
+  50% { opacity: 1; }
 }
