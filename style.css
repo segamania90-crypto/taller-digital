@@ -847,3 +847,4 @@ footer{
 
 @media (max-width:640px){ .footer-bottom span:last-child{ margin-right:0; } }
 @media (max-width:640px){ .brief-form .field-inline{flex-direction:column;gap:8px;} .brief-form .field-inline > label{width:100%;flex:none;padding-top:0;} }
+@media (max-width:640px){ .nav-lang-item{ display:flex; justify-content:center; padding-top:8px; } }
