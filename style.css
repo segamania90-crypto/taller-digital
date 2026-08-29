@@ -40,7 +40,6 @@
 html{scroll-behavior:smooth;}
 
 html,body{overflow-x:hidden;max-width:100%;}
-@media (max-width:640px){ .brief-form .field-inline{flex-direction:column;gap:8px;} .brief-form .field-inline > label{width:100%;flex:none;padding-top:0;} }
 
 body{
   font-family:var(--body);
@@ -777,7 +776,7 @@ footer{
   .proceso-list{grid-template-columns:repeat(2,1fr);row-gap:20px;}
   .brief-inner{grid-template-columns:1fr;}
 }
-@media (max-width:640px){
+@media (max-width:880px){
   .nav-links,.nav-cta{display:none;}
   .burger{display:block;}
   .nav-links.open{
@@ -787,6 +786,9 @@ footer{
     border-bottom:1px solid var(--sun);
     padding:20px 24px;gap:18px;
   }
+  .nav-lang-item{ display:flex; justify-content:center; padding-top:8px; }
+}
+@media (max-width:640px){
   .services-grid{grid-template-columns:1fr;}
   .portfolio-grid{grid-template-columns:1fr;}
   .proceso-list{grid-template-columns:1fr;}
@@ -845,6 +847,14 @@ footer{
   box-shadow: none !important;
 }
 
-@media (max-width:640px){ .footer-bottom span:last-child{ margin-right:0; } }
-@media (max-width:640px){ .brief-form .field-inline{flex-direction:column;gap:8px;} .brief-form .field-inline > label{width:100%;flex:none;padding-top:0;} }
-@media (max-width:640px){ .nav-lang-item{ display:flex; justify-content:center; padding-top:8px; } }
+@media (max-width:640px){
+  .footer-bottom span:last-child{ margin-right:0; }
+  .brief-form .field-inline{
+    flex-direction:column;
+    align-items:stretch; /* было flex-start (унаследовано) — сжимало блок с кнопками Sí/No до ширины текста */
+    gap:8px;
+  }
+  .brief-form .field-inline > label{width:100%;flex:none;padding-top:0;}
+  .field-inline-control{width:100%;}
+  .field-inline-control .toggle-group{width:100%;}
+}

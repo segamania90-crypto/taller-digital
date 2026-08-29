@@ -55,13 +55,29 @@ function replayWaChat(){
 setInterval(replayWaChat, 15000);
 
 // Scroll reveal
+// threshold bajo + rootMargin negativo: se activa apenas el bloque asoma,
+// en vez de exigir que el 15% de un bloque ALTO ya esté visible
+// (con saltos rápidos de scroll o anclas #id el bloque podía quedar
+// "a medias" y no cumplir nunca ese 15%, dejándolo transparente).
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('in-view');
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
+    }
   });
-}, { threshold: 0.15 });
+}, { threshold: 0, rootMargin: '0px 0px -5% 0px' });
 revealEls.forEach(el => io.observe(el));
+
+// Red de seguridad: si por lo que sea el observer no llega a disparar
+// para algo que ya está a la vista (carga con #ancla, salto de scroll
+// instantáneo, etc.), lo revelamos igualmente poco después de cargar.
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }, 1200);
+});
 
 // ================= ENVÍO DEL FORMULARIO → Google Apps Script =================
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwliFs89ukLqQTYqzOzd9C09tAC9ZWCl8MbAXfO0YIzl8Zmr3qIPSw7TT5nGgmXJkX3/exec';
