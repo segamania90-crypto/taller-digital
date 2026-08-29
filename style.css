@@ -862,3 +862,42 @@ footer{
   .field-inline-control{width:100%;}
   .field-inline-control .toggle-group{width:100%;}
 }
+
+/* Анимация чата бота (повтор каждые 10 секунд) */
+
+/* 1. Первая ссылка (Instagram) */
+.pf-chat-msg.in:nth-child(1) {
+  opacity: 0;
+  animation: botUserMsg1 10s ease-in-out infinite;
+}
+
+/* 2. Ответ бота (розовая плашка) */
+.pf-chat-msg.out {
+  opacity: 0;
+  animation: botAnswer 10s ease-in-out infinite;
+}
+
+/* 3. Вторая ссылка (YouTube) */
+.pf-chat-msg.in:nth-child(3) {
+  opacity: 0;
+  animation: botUserMsg2 10s ease-in-out infinite;
+}
+
+/* Ключевые кадры появления */
+@keyframes botUserMsg1 {
+  0% { opacity: 0; transform: translateY(8px); }
+  4%, 70% { opacity: 1; transform: translateY(0); }
+  75%, 100% { opacity: 0; transform: translateY(-5px); }
+}
+
+@keyframes botAnswer {
+  0%, 10% { opacity: 0; transform: scale(0.9); }
+  15%, 70% { opacity: 1; transform: scale(1); }
+  75%, 100% { opacity: 0; transform: scale(0.9); }
+}
+
+@keyframes botUserMsg2 {
+  0%, 25% { opacity: 0; transform: translateY(8px); }
+  30%, 70% { opacity: 1; transform: translateY(0); }
+  75%, 100% { opacity: 0; transform: translateY(-5px); }
+}
