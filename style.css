@@ -29,13 +29,13 @@
   --paper-2:rgba(255, 255, 255, 0.85);
   --line:#cbd5e1;
   --line-strong:#00a3cc;
+  --sun:#006e85;
   --ink:#0f172a;
   --ink-dim:#475569;
   --header-bg:rgba(240, 244, 248, 0.88);
   --neon-glow: 0 0 14px rgba(0, 163, 204, 0.35);
   --pink-glow: 0 0 14px rgba(255, 0, 85, 0.35);
 }
-
 *{margin:0;padding:0;box-sizing:border-box;}
 /* scroll-behavior:smooth se quitó de aquí: aplicado a todo <html>, el scroll
    normal con rueda/trackpad podía quedar "colgado" a mitad de la animación
