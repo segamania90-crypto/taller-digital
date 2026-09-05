@@ -510,3 +510,14 @@ if (briefSection && waFloatBtn) {
   }, { threshold: 0.15 });
   waObserver.observe(briefSection);
 }
+
+
+// Распорка под фиксированную шапку — подстраивается под реальную высоту шапки
+// (она разная на мобильном и десктопе), чтобы контент не наезжал на неё
+const headerEl = document.querySelector('header');
+const headerSpacer = document.getElementById('headerSpacer');
+function syncHeaderSpacer() {
+  if (headerEl && headerSpacer) headerSpacer.style.height = headerEl.offsetHeight + 'px';
+}
+syncHeaderSpacer();
+window.addEventListener('resize', syncHeaderSpacer);
