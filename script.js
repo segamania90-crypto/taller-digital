@@ -498,3 +498,15 @@ document.addEventListener('DOMContentLoaded', () => {
   render();
 });
 
+// Скрыть плавающую кнопку WhatsApp, когда видна форма брифа (чтобы не перекрывала поля, особенно на мобильном)
+const briefSection = document.getElementById('brief');
+const waFloatBtn = document.querySelector('.whatsapp-float');
+if (briefSection && waFloatBtn) {
+  const waObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      waFloatBtn.style.opacity = entry.isIntersecting ? '0' : '1';
+      waFloatBtn.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+    });
+  }, { threshold: 0.15 });
+  waObserver.observe(briefSection);
+}
