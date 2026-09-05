@@ -43,7 +43,7 @@
    casos). El scroll suave para los enlaces del menú ahora lo hace script.js
    solo para esos clics, con la rueda/trackpad se queda con el scroll nativo. */
 
-body{overflow-x:hidden;max-width:100%;}
+html,body{overflow-x:hidden;max-width:100%;}
 
 body{
   font-family:var(--body);
